@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+// import { useUser } from "./Contexts/UserContext";
 
-export default function Login() {
+export default function Signup() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [gender, setGender] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setErrors] = useState({});
-
   const navigate = useNavigate();
+  // const { signup } = useUser();
 
   const newUser = {
     firstName,
@@ -32,13 +33,10 @@ export default function Login() {
     });
 
     if (firstName && lastName && gender && email && password) {
-      localStorage.setItem("user", JSON.stringify(newUser));
+      // signup(newUser);
+      navigate("/login");
     }
-
-    navigate("/login");
   }
-
-  console.log(newUser);
 
   return (
     <div>

@@ -1,23 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
-export default function Sidebar() {
+export default function Sidebar({ user }) {
   return (
     <div className={styles.sidebarHome}>
+      {user && <h2>Welcome, {user.firstName + " " + user.lastName}</h2>}
       <div>
-        <Link to="/home">Home</Link>
+        <NavLink to="home">Home</NavLink>
       </div>
       <div>
-        <Link to="/profile">Profile</Link>
+        <NavLink to="profile">Profile</NavLink>
       </div>
       <div>
-        <Link to="/settings">Settings</Link>
+        <NavLink to="settings">Settings</NavLink>
       </div>
       <div>
-        <Link to="/admin">Admin</Link>
+        <NavLink to="admin">Admin</NavLink>
       </div>
       <div>
-        <Link to="/logout">Logout</Link>
+        <NavLink to="logout">Logout</NavLink>
       </div>
     </div>
   );

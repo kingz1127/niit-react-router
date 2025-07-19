@@ -11,3 +11,9 @@ html {
 body {
   font-size: 1.6rem;
 }
+.active {
+  text-decoration: none;
+  background-color: antiquewhite;
+  border: 2px solid rgb(199, 126, 126);
+  border-radius: 2px;
+}
